@@ -1,6 +1,6 @@
 ## Sensu-Plugins-twitter
 
-[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-twitter.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-twitter)
+[ ![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-twitter.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-twitter)
 [![Gem Version](https://badge.fury.io/rb/sensu-plugins-twitter.svg)](http://badge.fury.io/rb/sensu-plugins-twitter)
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-twitter/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-twitter)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-twitter/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-twitter)
