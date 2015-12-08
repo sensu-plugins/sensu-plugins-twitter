@@ -39,7 +39,6 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'sensu-plugin', '1.2.0'
   s.add_runtime_dependency 'twitter',      '5.14.0'
-  s.add_runtime_dependency 'timeout',      '0.0.1'
 
   s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
   s.add_development_dependency 'rubocop',                   '0.32.1'

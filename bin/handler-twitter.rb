@@ -16,7 +16,6 @@
 require 'rubygems' if RUBY_VERSION < '1.9.0'
 require 'sensu-handler'
 require 'twitter'
-require 'timeout'
 
 class TwitterHandler < Sensu::Handler
   def event_name
