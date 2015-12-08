@@ -34,16 +34,16 @@ class TwitterHandler < Sensu::Handler
   end
 
   private
-    def twitter_clients
-      @twitter_clients ||= settings['twitter'].map do |account|
-        next unless @event['client']['subscriptions'].include?(account[1]['sensusub'])
-        Twitter::REST::Client.new do |config|
-          config.consumer_key = account[1]['consumer_key']
-          config.consumer_secret = account[1]['consumer_secret']
-          config.access_token = account[1]['oauth_token']
-          config.access_token_secret = account[1]['oauth_token_secret']
-        end
-      end.compact
-    end
-end
 
+  def twitter_clients
+    @twitter_clients ||= settings['twitter'].map do |account|
+      next unless @event['client']['subscriptions'].include?(account[1]['sensusub'])
+      Twitter::REST::Client.new do |config|
+        config.consumer_key = account[1]['consumer_key']
+        config.consumer_secret = account[1]['consumer_secret']
+        config.access_token = account[1]['oauth_token']
+        config.access_token_secret = account[1]['oauth_token_secret']
+      end
+    end.compact
+  end
+end
