@@ -23,22 +23,27 @@ class TwitterHandler < Sensu::Handler
   end
 
   def handle
-    puts settings['twitter']
     # #YELLOW
-    settings['twitter'].each do |account| # rubocop:disable Style/Next
-      if @event['client']['subscriptions'].include?(account[1]['sensusub'])
-        Twitter.configure do |t|
-          t.consumer_key = account[1]['consumer_key']
-          t.consumer_secret = account[1]['consumer_secret']
-          t.oauth_token = account[1]['oauth_token']
-          t.oauth_token_secret = account[1]['oauth_token_secret']
-        end
-        if @event['action'].eql?('resolve')
-          Twitter.update("RESOLVED - #{event_name}: #{@event['check']['notification']} Time: #{Time.now} ")
-        else
-          Twitter.update("ALERT - #{event_name}: #{@event['check']['notification']} Time: #{Time.now} ")
-        end
+    twitter_clients.each do |client|
+      if @event['action'].eql?('resolve')
+        client.update("RESOLVED - #{event_name}: #{@event['check']['notification']} Time: #{Time.now} ")
+      else
+        client.update("ALERT - #{event_name}: #{@event['check']['notification']} Time: #{Time.now} ")
       end
     end
   end
+
+  private
+    def twitter_clients
+      @twitter_clients ||= settings['twitter'].map do |account|
+        next unless @event['client']['subscriptions'].include?(account[1]['sensusub'])
+        Twitter::REST::Client.new do |config|
+          config.consumer_key = account[1]['consumer_key']
+          config.consumer_secret = account[1]['consumer_secret']
+          config.access_token = account[1]['oauth_token']
+          config.access_token_secret = account[1]['oauth_token_secret']
+        end
+      end.compact
+    end
 end
+
