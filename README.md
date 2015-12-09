@@ -16,6 +16,7 @@
 
 twitter.json example:
 
+```json
 {
     "twitter": {
         "myservice-status": {
@@ -27,6 +28,7 @@ twitter.json example:
         }
     }
 }
+```
 
 ## Installation
 
