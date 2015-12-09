@@ -10,9 +10,23 @@
 ## Functionality
 
 ## Files
- * bin/handler-twitter
+ * bin/handler-twitter.rb
 
 ## Usage
+
+twitter.json example:
+
+{
+    "twitter": {
+        "myservice-status": {
+            "consumer_key":  "123",
+            "consumer_secret": "123",
+            "oauth_token": "123",
+            "oauth_token_secret": "123",
+            "sensusub": "twitter"
+        }
+    }
+}
 
 ## Installation
 
