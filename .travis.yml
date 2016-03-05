@@ -1,19 +1,33 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 1.9.3
+- 2.0
+- 2.1
+- 2.2
 notifications:
   email:
     recipients:
-      - sensu-plugin@sensu-plugins.io
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+- gem build sensu-plugins-twitter.gemspec
+- gem install sensu-plugins-twitter-*.gem
+deploy:
+  provider: rubygems
+  api_key:
+    secure: A1DUEGvsXOQ8Sr/aXeo6Wruf+jn/SCpPjZf1exgz5996hBwgve4LiM1oAhd31QxfhJeTMIBf49P4bxQEPyBllVJugm1SdBuOP7nFAnO+8Rp1pqC/o81hfMrxamQWK8BxjG1nycxMQTMWzXOMiTcXJCUvPmf1IifwFEg2D+ftCtM=
+  gem: sensu-plugins-twitter
+  on:
+    ags: true
+    all_branches: true
+    rvm: 1.9.3
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    repo: sensu-plugins/sensu-plugins-twitter
