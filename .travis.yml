@@ -24,7 +24,7 @@ deploy:
     secure: A1DUEGvsXOQ8Sr/aXeo6Wruf+jn/SCpPjZf1exgz5996hBwgve4LiM1oAhd31QxfhJeTMIBf49P4bxQEPyBllVJugm1SdBuOP7nFAnO+8Rp1pqC/o81hfMrxamQWK8BxjG1nycxMQTMWzXOMiTcXJCUvPmf1IifwFEg2D+ftCtM=
   gem: sensu-plugins-twitter
   on:
-    ags: true
+    tags: true
     all_branches: true
     rvm: 1.9.3
     rvm: 2.0
