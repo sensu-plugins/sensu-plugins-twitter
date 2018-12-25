@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## Unreleased
+
+## [2.0.0] - 2018-12-24
 ### Added 
 - Bump sensu-plugin runtime dep to 3.0 with Sensu Go to Sensu Core 1.x migration option (@jspaleta)
 - Added 2.5.1 ruby support (@jspaleta)
